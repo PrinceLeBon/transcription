@@ -4,6 +4,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:logger/logger.dart';
 import 'package:video_player/video_player.dart';
 import 'package:http/http.dart' as http;
 
@@ -188,6 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       if (response.statusCode == 200) {
         final responseData = jsonDecode(response.body);
+        Logger().i(responseData["upload_url"]);
         return responseData["upload_url"];
       } else {
         return null;
@@ -211,6 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (response.statusCode == 200) {
       final responseData = jsonDecode(response.body);
       final transcriptId = responseData['id'];
+      Logger().i(transcriptId);
       // Poll the transcription API until the transcript is ready
       while (true) {
         // Send a GET request to the polling endpoint to retrieve the status of the transcript
