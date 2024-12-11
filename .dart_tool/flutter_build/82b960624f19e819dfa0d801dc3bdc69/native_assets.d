@@ -1,0 +1,1 @@
+ /home/ghost/AndroidStudioProjects/transcription/.dart_tool/flutter_build/82b960624f19e819dfa0d801dc3bdc69/native_assets.yaml: 

@@ -1,12 +1,14 @@
 import 'dart:convert';
 import 'dart:io';
+
 import 'package:dotted_border/dotted_border.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'package:logger/logger.dart';
 import 'package:video_player/video_player.dart';
-import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const MyApp());
@@ -98,7 +100,22 @@ class _MyHomePageState extends State<MyHomePage> {
                     radius: const Radius.circular(12.0),
                     child: GestureDetector(
                       onTap: () async {
-                        selectedContent = await picker.pickVideo(
+                        FilePickerResult? result =
+                            await FilePicker.platform.pickFiles();
+
+                        if (result != null) {
+                          File file = File(result.files.single.path!);
+                          setState(() {
+                            selectedContent = XFile(file.path);
+                            cameraVideoPlayerController =
+                                VideoPlayerController.file(
+                              File(selectedContent!.path),
+                            )..initialize();
+                          });
+                          String? audioUrl =
+                              await uploadFile((selectedContent?.path)!);
+
+                          /*selectedContent = await picker.pickVideo(
                           source: ImageSource.gallery,
                         );
                         setState(() {
@@ -109,11 +126,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           )..initialize();
                         });
                         String? audioUrl =
-                            await uploadFile((selectedContent?.path)!);
-                        transcribe = await transcribeAudio(audioUrl!);
-                        setState(() {
-                          transcribe = transcribe;
-                        });
+                            await uploadFile((selectedContent?.path)!);*/
+                          transcribe = await transcribeAudio(audioUrl!);
+                          setState(() {
+                            transcribe = transcribe;
+                          });
+                        }
                       },
                       child: Container(
                         width: double.infinity,
@@ -166,9 +184,16 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Visibility(
                 visible: transcribe.length != 1,
-                child: SizedBox(
-                    width: MediaQuery.of(context).size.width - 50,
-                    child: Text(transcribe["text"])))
+                child: Expanded(
+                  child: SingleChildScrollView(
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width - 50,
+                      child: SelectableText(
+                        transcribe["text"],
+                      ),
+                    ),
+                  ),
+                ))
           ],
         )));
   }

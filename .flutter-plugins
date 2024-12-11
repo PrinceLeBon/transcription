@@ -1,0 +1,22 @@
+# This is a generated file; do not edit or check into version control.
+file_picker=/home/ghost/.pub-cache/hosted/pub.dev/file_picker-8.1.4/
+file_selector_linux=/home/ghost/.pub-cache/hosted/pub.dev/file_selector_linux-0.9.1+3/
+file_selector_macos=/home/ghost/.pub-cache/hosted/pub.dev/file_selector_macos-0.9.2/
+file_selector_windows=/home/ghost/.pub-cache/hosted/pub.dev/file_selector_windows-0.9.2/
+flutter_plugin_android_lifecycle=/home/ghost/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.23/
+image_picker=/home/ghost/.pub-cache/hosted/pub.dev/image_picker-1.1.2/
+image_picker_android=/home/ghost/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+18/
+image_picker_for_web=/home/ghost/.pub-cache/hosted/pub.dev/image_picker_for_web-3.0.6/
+image_picker_ios=/home/ghost/.pub-cache/hosted/pub.dev/image_picker_ios-0.8.12+1/
+image_picker_linux=/home/ghost/.pub-cache/hosted/pub.dev/image_picker_linux-0.2.1+1/
+image_picker_macos=/home/ghost/.pub-cache/hosted/pub.dev/image_picker_macos-0.2.1+1/
+image_picker_windows=/home/ghost/.pub-cache/hosted/pub.dev/image_picker_windows-0.2.1+1/
+path_provider=/home/ghost/.pub-cache/hosted/pub.dev/path_provider-2.0.15/
+path_provider_android=/home/ghost/.pub-cache/hosted/pub.dev/path_provider_android-2.0.27/
+path_provider_foundation=/home/ghost/.pub-cache/hosted/pub.dev/path_provider_foundation-2.2.3/
+path_provider_linux=/home/ghost/.pub-cache/hosted/pub.dev/path_provider_linux-2.1.11/
+path_provider_windows=/home/ghost/.pub-cache/hosted/pub.dev/path_provider_windows-2.1.7/
+video_player=/home/ghost/.pub-cache/hosted/pub.dev/video_player-2.9.2/
+video_player_android=/home/ghost/.pub-cache/hosted/pub.dev/video_player_android-2.4.9/
+video_player_avfoundation=/home/ghost/.pub-cache/hosted/pub.dev/video_player_avfoundation-2.6.4/
+video_player_web=/home/ghost/.pub-cache/hosted/pub.dev/video_player_web-2.3.3/
